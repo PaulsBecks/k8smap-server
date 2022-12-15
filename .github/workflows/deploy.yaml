@@ -21,4 +21,4 @@ jobs:
           script: |
             [ ! -d "k8smap-server" ]; git clone https://github.com/PaulsBecks/k8smap-server.git
             cd k8smap-server
-            docker compose up --build
+            docker compose up --build -d
