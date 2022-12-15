@@ -1,0 +1,14 @@
+services:
+  k8smap-frontend:
+    image: paulsbecks/k8smap-frontend
+    ports: 
+      - "3000:80"
+  k8smap-backend:
+    image: paulsbecks/k8smap-backend
+    ports:
+      - "8000:80"
+  nginx:
+    build: .
+    ports:
+     - "8080:80"
+    depends_on: ["k8smap-frontend", "k8smap-backend"]
